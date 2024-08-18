@@ -726,11 +726,6 @@
                   <a href="#">REALOCAÇÃO</a>
                 </div>
               </li>
-            <li onclick="toggleForm('form14')" id="item14">
-              <div style="display: flex; gap: 0.8rem; align-items: center">
-                <img src="https://i.imgur.com/GjWUHpp.png" alt="Ícone" class="icon" style="width: 20px; height: auto" />
-                <a href="#">EXONERAÇÃO</a>
-              </div>
             <li onclick="toggleForm('form12')" id="item12">
               <div style="display: flex; gap: 1rem; align-items: center">
                 <img src="https://i.imgur.com/428Hx6V.png" alt="Ícone" class="icon" style="width: 25px; height: auto" />
@@ -803,11 +798,6 @@
                 <a href="#">TRANSFERÊNCIA DE CONTA</a>
               </div>
             </li>
-            <li onclick="toggleForm('form14')" id="item14">
-              <div style="display: flex; gap: 0.8rem; align-items: center">
-                <img src="https://i.imgur.com/GjWUHpp.png" alt="Ícone" class="icon" style="width: 20px; height: auto" />
-                <a href="#">EXONERAÇÃO</a>
-              </div>
             <li onclick="toggleForm('form12')" id="item12">
               <div style="display: flex; gap: 1rem; align-items: center">
                 <img src="https://i.imgur.com/428Hx6V.png" alt="Ícone" class="icon" style="width: 25px; height: auto" />
@@ -821,6 +811,12 @@
       <div id="form1" class="form-container">
         <form novalidate>
           <input type="text" placeholder="Nickname(s)" required />
+          <select required>
+            <option value="" disabled selected>Cargo atual</option>
+              <option value="Analista">Analista</option>
+              <option value="Docente">Docente</option>
+              <option value="Arquiteto">Arquiteto</option>
+          </select>
           <button type="submit">Enviar</button>
         </form>
       </div> 
@@ -1004,34 +1000,6 @@
           <button id="enviar_attlist" type="submit">Enviar</button>
         </form>
       </div>
-      <div id="form14" class="form-container">
-        <form novalidate>
-        <div class="row">
-          <input type="text" placeholder="Nickname" required />
-          <input type="text" placeholder="Motivo" required />
-        </div>
-        <div class="row">
-          <input
-          type="number"
-          min="0"
-          max="1000"
-          placeholder="Período"
-          required/>
-          <input type="text" placeholder="Permissão" required />
-        </div>
-        <select required>
-            <option value="" disabled selected>Cargo</option>
-            <option value="Analista">Analista</option>
-            <option value="Docente">Docente</option>
-            <option value="Arquiteto">Arquiteto</option>
-            <option value="Secretário de Relações Sociais">Secretário de Relações Sociais</option>
-            <option value="Secretário de Educação">Secretário de Educação</option>
-            <option value="Vice-diretor">Vice-diretor</option>
-            <option value="Diretor">Diretor</option>
-          </select>
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
       <div id="form13" class="form-container">
         <form novalidate>
           <input type="text" placeholder="Nickname(s)" required />
@@ -1083,7 +1051,6 @@
     form11: "REINTEGRAÇÃO",
     form12: "ATUALIZAÇÃO DA LISTAGEM",
     form13: "REALOCAÇÃO",
-    form14: "EXONERAÇÃO",
   };
 
   function toggleForm(formId) {
