@@ -1135,7 +1135,7 @@ function gatherFormData() {
             const value = input.value.trim();
             if (value) {
                 let formattedValue = value;
-                if (input.type === "date" && (formId === "form1" || formId === "form2" || formId === "form6" || formId === "form11" || formId === "form13" || formId === "form14")) {
+                if (input.type === "date" && (formId === "form1" || formId === "form2" || formId === "form4" || formId === "form5" || formId === "form6" || formId === "form11" || formId === "form13" || formId === "form14")) {
                     const dateParts = value.split("-");
                     formattedValue = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
                 }
@@ -1170,7 +1170,7 @@ function gatherFormData() {
     formData += placeholdersData;
 
     // Incluir data apenas se for form1, form4, form5, form6, form11
-    if (formId === "form1" || formId === "form2" || formId === "form6" || formId === "form11" || formId === "form13" || formId === "form14") {
+    if (formId === "form1" || formId === "form2" || formId === "form4" || formId === "form5" || formId === "form6" || formId === "form11" || formId === "form13" || formId === "form14") {
         const today = new Date();
         const formattedDate = `${today.getDate().toString().padStart(2, '0')}/${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`;
         formData += `[color=#4b2f7b][b]Data:[/b][/color] ${formattedDate}\n`;
