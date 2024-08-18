@@ -720,11 +720,6 @@
                 <a href="#">TRANSFERÊNCIA DE CONTA</a>
               </div>
             </li>
-            <li onclick="toggleForm('form14')" id="item14">
-              <div style="display: flex; gap: 0.8rem; align-items: center">
-                <img src="https://i.imgur.com/GjWUHpp.png" alt="Ícone" class="icon" style="width: 20px; height: auto" />
-                <a href="#">EXONERAÇÃO</a>
-              </div>
             <li onclick="toggleForm('form12')" id="item12">
               <div style="display: flex; gap: 1rem; align-items: center">
                 <img src="https://i.imgur.com/428Hx6V.png" alt="Ícone" class="icon" style="width: 25px; height: auto" />
@@ -860,10 +855,7 @@
               <option value="Intendente">Intendente</option>
             </select>
           </div>
-          <div class="row">
           <input type="text" placeholder="Motivo" required />
-          <input type="date" placeholder="Data" required />
-        </div>
           <button type="submit">Enviar</button>
         </form>
       </div>
@@ -884,10 +876,7 @@
               <option value="Vice-Intendente">Vice-Intendente</option>
             </select>
           </div>
-          <div class="row">
           <input type="text" placeholder="Motivo" required />
-          <input type="date" placeholder="Data" required />
-        </div>
           <button type="submit">Enviar</button>
         </form>
       </div>
@@ -974,31 +963,6 @@
           <button id="enviar_attlist" type="submit">Enviar</button>
         </form>
       </div>
-      <div id="form14" class="form-container">
-        <form novalidate>
-        <div class="row">
-          <input type="text" placeholder="Nickname" required />
-          <input type="text" placeholder="Motivo" required />
-        </div>
-        <div class="row">
-          <input
-          type="number"
-          min="0"
-          max="1000"
-          placeholder="Período"
-          required/>
-          <input type="text" placeholder="Permissão" required />
-        </div>
-        <select required>
-          <option value="" disabled selected>Cargo</option>
-          <option value="Aplicador">Aplicador</option>
-          <option value="Fiscal">Fiscal</option>
-          <option value="Vice-Intendente">Vice-Intendente</option>
-          <option value="Intendente">Intendente</option>
-        </select>
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
       <div class="credits">
         <p>
           <i class="fas fa-code"></i> Desenvolvimento:
@@ -1025,7 +989,6 @@
     form10: "TRANSFERÊNCIA DE CONTA",
     form11: "REINTEGRAÇÃO",
     form12: "ATUALIZAÇÃO DA LISTAGEM",
-    form14: "EXONERAÇÃO",
   };
 
   function toggleForm(formId) {
@@ -1110,7 +1073,7 @@ function gatherFormData() {
             const value = input.value.trim();
             if (value) {
                 let formattedValue = value;
-                if (input.type === "date" && (formId === "form1" || formId === "form6" || formId === "form11" || formId === "form13" || formId === "form14")) {
+                if (input.type === "date" && (formId === "form1" || formId === "form4" || formId === "form5" || formId === "form6" || formId === "form11" || formId === "form13" || formId === "form14")) {
                     const dateParts = value.split("-");
                     formattedValue = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
                 }
@@ -1145,7 +1108,7 @@ function gatherFormData() {
     formData += placeholdersData;
 
     // Incluir data apenas se for form1, form4, form5, form6, form11
-    if (formId === "form1" || formId === "form6" || formId === "form11" || formId === "form13" || formId === "form14") {
+    if (formId === "form1" || formId === "form4" || formId === "form5" || formId === "form6" || formId === "form11" || formId === "form13" || formId === "form14") {
         const today = new Date();
         const formattedDate = `${today.getDate().toString().padStart(2, '0')}/${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`;
         formData += `[color=#8c54cc][b]Data:[/b][/color] ${formattedDate}\n`;
