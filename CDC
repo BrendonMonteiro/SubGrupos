@@ -866,10 +866,7 @@
               <option value="Diretor">Diretor</option>
             </select>
           </div>
-          <div class="row">
           <input type="text" placeholder="Motivo" required />
-          <input type="date" placeholder="Data" required />
-        </div>
           <button type="submit">Enviar</button>
         </form>
       </div>
@@ -894,10 +891,7 @@
               <option value="Vice-diretor">Vice-diretor</option>
             </select>
           </div>
-          <div class="row">
           <input type="text" placeholder="Motivo" required />
-          <input type="date" placeholder="Data" required />
-        </div>
           <button type="submit">Enviar</button>
         </form>
       </div>
